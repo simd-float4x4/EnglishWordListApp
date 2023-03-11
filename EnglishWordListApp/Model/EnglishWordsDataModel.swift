@@ -4,6 +4,7 @@ import UIKit
 class EnglishWordsDataModel {
     let word: Word
     
-    init()
-    
+    init(englishWord: Word){
+        word = englishWord
+    }
 }
