@@ -40,13 +40,13 @@ class WordViewController: UIViewController, UITableViewDelegate {
         guard let model = myModel else { return }
         
         model.notificationCenter.addObserver(forName: .init(rawValue: "changeTweetList"),
-                                              object: nil,
-                                              queue: nil,
-                                              using: {
-             [unowned self] notification in
-             let wordView = self.view as! WordView
+                                            object: nil,
+                                            queue: nil,
+                                            using: {
+            [unowned self] notification in
+            let wordView = self.view as! WordView
              
-             wordView.tableView.reloadData()
+            wordView.tableView.reloadData()
          })
     }
     
