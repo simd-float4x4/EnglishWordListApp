@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		70C4542829BC5994002BBD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4542729BC5994002BBD5C /* AppDelegate.swift */; };
 		70C4542A29BC5994002BBD5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4542929BC5994002BBD5C /* SceneDelegate.swift */; };
-		70C4542C29BC5994002BBD5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4542B29BC5994002BBD5C /* ViewController.swift */; };
-		70C4542F29BC5994002BBD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C4542D29BC5994002BBD5C /* Main.storyboard */; };
 		70C4543229BC5994002BBD5C /* EnglishWordListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70C4543029BC5994002BBD5C /* EnglishWordListApp.xcdatamodeld */; };
 		70C4543429BC5998002BBD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C4543329BC5998002BBD5C /* Assets.xcassets */; };
 		70C4543729BC5998002BBD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C4543529BC5998002BBD5C /* LaunchScreen.storyboard */; };
@@ -18,9 +16,11 @@
 		70C4544C29BC5998002BBD5C /* EnglishWordListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4544B29BC5998002BBD5C /* EnglishWordListAppUITests.swift */; };
 		70C4544E29BC5998002BBD5C /* EnglishWordListAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4544D29BC5998002BBD5C /* EnglishWordListAppUITestsLaunchTests.swift */; };
 		70C4545E29BC5AAE002BBD5C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4545D29BC5AAE002BBD5C /* Word.swift */; };
-		70C4546029BC5B69002BBD5C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4545F29BC5B69002BBD5C /* Category.swift */; };
-		70C4546229BC5B9F002BBD5C /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4546129BC5B9F002BBD5C /* Level.swift */; };
 		70C4546429BC5C42002BBD5C /* EnglishWordsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4546329BC5C42002BBD5C /* EnglishWordsDataModel.swift */; };
+		70C4546829BD4B01002BBD5C /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4546729BD4B01002BBD5C /* WordViewController.swift */; };
+		70C4546A29BD51E0002BBD5C /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4546929BD51E0002BBD5C /* WordView.swift */; };
+		70C4546E29BD7C85002BBD5C /* WordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C4546D29BD7C85002BBD5C /* WordView.xib */; };
+		70C4547029BD7CF1002BBD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C4546F29BD7CF1002BBD5C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,6 @@
 		70C4542429BC5994002BBD5C /* EnglishWordListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishWordListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C4542729BC5994002BBD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70C4542929BC5994002BBD5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		70C4542B29BC5994002BBD5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		70C4542E29BC5994002BBD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70C4543129BC5994002BBD5C /* EnglishWordListApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EnglishWordListApp.xcdatamodel; sourceTree = "<group>"; };
 		70C4543329BC5998002BBD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70C4543629BC5998002BBD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,9 +54,11 @@
 		70C4544B29BC5998002BBD5C /* EnglishWordListAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishWordListAppUITests.swift; sourceTree = "<group>"; };
 		70C4544D29BC5998002BBD5C /* EnglishWordListAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishWordListAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70C4545D29BC5AAE002BBD5C /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Word.swift; path = EnglishWordListApp/Model/Word.swift; sourceTree = SOURCE_ROOT; };
-		70C4545F29BC5B69002BBD5C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Category.swift; path = EnglishWordListApp/Model/Category.swift; sourceTree = SOURCE_ROOT; };
-		70C4546129BC5B9F002BBD5C /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Level.swift; path = EnglishWordListApp/Model/Level.swift; sourceTree = SOURCE_ROOT; };
 		70C4546329BC5C42002BBD5C /* EnglishWordsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnglishWordsDataModel.swift; path = EnglishWordListApp/Model/EnglishWordsDataModel.swift; sourceTree = SOURCE_ROOT; };
+		70C4546729BD4B01002BBD5C /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		70C4546929BD51E0002BBD5C /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		70C4546D29BD7C85002BBD5C /* WordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordView.xib; sourceTree = "<group>"; };
+		70C4546F29BD7CF1002BBD5C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +114,7 @@
 				70C4545A29BC5A4B002BBD5C /* Models */,
 				70C4542729BC5994002BBD5C /* AppDelegate.swift */,
 				70C4542929BC5994002BBD5C /* SceneDelegate.swift */,
-				70C4542B29BC5994002BBD5C /* ViewController.swift */,
-				70C4542D29BC5994002BBD5C /* Main.storyboard */,
+				70C4546F29BD7CF1002BBD5C /* Main.storyboard */,
 				70C4543329BC5998002BBD5C /* Assets.xcassets */,
 				70C4543529BC5998002BBD5C /* LaunchScreen.storyboard */,
 				70C4543829BC5998002BBD5C /* Info.plist */,
@@ -145,8 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				70C4545D29BC5AAE002BBD5C /* Word.swift */,
-				70C4545F29BC5B69002BBD5C /* Category.swift */,
-				70C4546129BC5B9F002BBD5C /* Level.swift */,
 				70C4546329BC5C42002BBD5C /* EnglishWordsDataModel.swift */,
 			);
 			path = Models;
@@ -155,6 +152,8 @@
 		70C4545B29BC5A60002BBD5C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70C4546D29BD7C85002BBD5C /* WordView.xib */,
+				70C4546929BD51E0002BBD5C /* WordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +161,7 @@
 		70C4545C29BC5A73002BBD5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70C4546729BD4B01002BBD5C /* WordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +176,7 @@
 				70C4542029BC5994002BBD5C /* Sources */,
 				70C4542129BC5994002BBD5C /* Frameworks */,
 				70C4542229BC5994002BBD5C /* Resources */,
+				70C4546629BC5FCE002BBD5C /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -270,9 +271,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70C4546E29BD7C85002BBD5C /* WordView.xib in Resources */,
+				70C4547029BD7CF1002BBD5C /* Main.storyboard in Resources */,
 				70C4543729BC5998002BBD5C /* LaunchScreen.storyboard in Resources */,
 				70C4543429BC5998002BBD5C /* Assets.xcassets in Resources */,
-				70C4542F29BC5994002BBD5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,19 +294,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70C4546629BC5FCE002BBD5C /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n　swiftlint autocorrect --format # 自動修正の有効化\n　swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70C4542029BC5994002BBD5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70C4542C29BC5994002BBD5C /* ViewController.swift in Sources */,
-				70C4546229BC5B9F002BBD5C /* Level.swift in Sources */,
+				70C4546829BD4B01002BBD5C /* WordViewController.swift in Sources */,
 				70C4546429BC5C42002BBD5C /* EnglishWordsDataModel.swift in Sources */,
 				70C4542829BC5994002BBD5C /* AppDelegate.swift in Sources */,
 				70C4545E29BC5AAE002BBD5C /* Word.swift in Sources */,
+				70C4546A29BD51E0002BBD5C /* WordView.swift in Sources */,
 				70C4543229BC5994002BBD5C /* EnglishWordListApp.xcdatamodeld in Sources */,
 				70C4542A29BC5994002BBD5C /* SceneDelegate.swift in Sources */,
-				70C4546029BC5B69002BBD5C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,14 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		70C4542D29BC5994002BBD5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70C4542E29BC5994002BBD5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		70C4543529BC5998002BBD5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
