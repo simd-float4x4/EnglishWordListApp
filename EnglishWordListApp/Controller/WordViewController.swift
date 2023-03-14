@@ -31,7 +31,7 @@ class WordViewController: UIViewController, UITableViewDelegate {
     
     private func settingTableView () {
         let wordView = self.view as! WordView
-        wordView.tableView.delegate = self
+        wordView.tableView.delegate = self.myModel
         wordView.tableView.dataSource = self.myModel
         wordView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }

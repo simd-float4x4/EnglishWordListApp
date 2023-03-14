@@ -9,7 +9,7 @@ class EnglishWordsDataModel {
     }
 }
 
-class EnglishWordsModel: NSObject,UITableViewDataSource {
+class EnglishWordsModel: NSObject,UITableViewDataSource, UITableViewDelegate {
     
     let notificationCenter = NotificationCenter()
     
@@ -68,5 +68,23 @@ class EnglishWordsModel: NSObject,UITableViewDataSource {
         content.secondaryText = tweetModel.word.meaning
         cell.contentConfiguration = content
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+       let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+           completionHandler(true)
+       }
+
+       let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+         completionHandler(true)
+       }
+
+        editAction.backgroundColor = UIColor.blue
+       return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
