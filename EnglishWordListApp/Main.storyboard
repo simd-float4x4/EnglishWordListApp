@@ -8,21 +8,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--単語帳-->
+        <!--成績照会-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="WordViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjk-Qm-J2g">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="単語帳" id="0gg-hk-FeC"/>
+                    <navigationItem key="navigationItem" title="成績照会" id="0gg-hk-FeC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="40"/>
+            <point key="canvasLocation" x="2116" y="-567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6NE-Zq-D2G">
@@ -35,31 +44,128 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iMg-IS-HhB" kind="relationship" relationship="viewControllers" id="D72-vd-aNW"/>
+                        <segue destination="Ipb-Li-Tgf" kind="relationship" relationship="viewControllers" id="qBM-V8-yyO"/>
+                        <segue destination="B3B-he-rTf" kind="relationship" relationship="viewControllers" id="k7b-xg-qXm"/>
+                        <segue destination="0O0-Sl-Zul" kind="relationship" relationship="viewControllers" id="0i8-xz-fFE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZB-DJ-T9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="39.508928571428569"/>
+            <point key="canvasLocation" x="7" y="-567"/>
+        </scene>
+        <!--クイズ-->
+        <scene sceneID="I8w-sx-RBJ">
+            <objects>
+                <viewController id="WMI-3v-DlZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fAs-s9-L0d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label２" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-58-JIj">
+                                <rect key="frame" x="186" y="438" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n5o-Tf-YTO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="クイズ" id="Uno-VF-itw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OqC-hG-4hx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2115.9420289855075" y="121.875"/>
         </scene>
         <!--単語帳-->
-        <scene sceneID="v6Z-3F-Lzr">
+        <scene sceneID="pRE-pZ-8IY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iMg-IS-HhB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="単語帳" id="RP3-Qw-3cy"/>
+                <viewController id="xAd-Cz-7vo" customClass="WordViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z4L-s1-BLU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0bV-CA-ynK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwt-mb-HeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2116" y="-1281"/>
+        </scene>
+        <!--単語帳-->
+        <scene sceneID="QBU-YE-LTK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZL-FE-2E0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ipb-Li-Tgf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="単語帳" id="sd9-Iv-qQZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lh3-zb-UIJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jKm-CG-XiN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="xEj-2S-TJw"/>
+                        <segue destination="xAd-Cz-7vo" kind="relationship" relationship="rootViewController" id="TAf-WG-Lch"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1fR-Cq-ttB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="40"/>
+            <point key="canvasLocation" x="1074" y="-1281"/>
+        </scene>
+        <!--成績照会-->
+        <scene sceneID="7W3-g9-0st">
+            <objects>
+                <viewController id="mCv-ac-T8n" customClass="WordViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xRQ-yx-3gc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9ZI-wn-hgi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="成績照会" id="bWv-Nm-Q1D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNE-Bw-A3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3149" y="-1281"/>
+        </scene>
+        <!--成績照会-->
+        <scene sceneID="UrO-xj-OLq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B3B-he-rTf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="成績照会" id="6wA-HB-T5y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mvd-wa-WIj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="O79-Qh-eR6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zth-6D-t7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="-567"/>
+        </scene>
+        <!--クイズ-->
+        <scene sceneID="RdX-E7-AhY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0O0-Sl-Zul" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="クイズ" id="6ZL-QH-p7z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zkH-Pl-MPI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WMI-3v-DlZ" kind="relationship" relationship="rootViewController" id="hSO-uT-p98"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBm-nW-Th4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="122"/>
         </scene>
     </scenes>
     <resources>
