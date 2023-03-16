@@ -66,6 +66,10 @@ class WordViewController: UIViewController {
     @objc func onTapTableViewCell() {
         performSegue(withIdentifier: "ModalSegue", sender: nil)
     }
+    
+    @objc func onTapRemoveView() {
+        dismiss(animated: true)
+    }
 }
 
 extension WordViewController: UITableViewDelegate {
@@ -81,7 +85,6 @@ extension WordViewController: UITableViewDelegate {
      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Modelでタップされた時の追加処理を行う。
         tableView.deselectRow(at: indexPath, animated: true)
         self.onTapTableViewCell()
     }

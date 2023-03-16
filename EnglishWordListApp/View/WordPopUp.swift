@@ -1,7 +1,7 @@
 import UIKit
 
 class WordPopUp: UIView {
-   @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cancelView: UIView!
    
    override init(frame: CGRect){
        super.init(frame: frame)
@@ -18,6 +18,5 @@ class WordPopUp: UIView {
        view.frame = self.bounds
        self.addSubview(view)
    }
-
 }
 
