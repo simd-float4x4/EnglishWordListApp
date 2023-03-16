@@ -89,6 +89,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA"/>
+                    <connections>
+                        <segue destination="mCv-ac-T8n" kind="presentation" identifier="ModalSegue" id="ijf-ba-dHA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwt-mb-HeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +120,7 @@
         <!--成績照会-->
         <scene sceneID="7W3-g9-0st">
             <objects>
-                <viewController id="mCv-ac-T8n" customClass="WordViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WordPopUp" modalPresentationStyle="overCurrentContext" id="mCv-ac-T8n" customClass="WordPopUpModalViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xRQ-yx-3gc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

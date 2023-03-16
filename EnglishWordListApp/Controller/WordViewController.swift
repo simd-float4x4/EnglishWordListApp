@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class WordViewController: UIViewController, UITableViewDelegate {
+class WordViewController: UIViewController {
     
     @IBOutlet var inputEnglishWordField: UITextField!
     @IBOutlet var inputEnglishMeaningField: UITextField!
@@ -31,7 +31,7 @@ class WordViewController: UIViewController, UITableViewDelegate {
     
     private func settingTableView () {
         let wordView = self.view as! WordView
-        wordView.tableView.delegate = self.myModel
+        wordView.tableView.delegate = self
         wordView.tableView.dataSource = self.myModel
         wordView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
@@ -62,4 +62,27 @@ class WordViewController: UIViewController, UITableViewDelegate {
                 wordCategory: wordCategories,
                 level: 0,
                 isSolved: false))}
+    
+    @objc func onTapTableViewCell() {
+        performSegue(withIdentifier: "ModalSegue", sender: nil)
+    }
+}
+
+extension WordViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+       let deleteAction = UIContextualAction(style: .destructive, title: "Remembered!") { (action, view, completionHandler) in
+         completionHandler(true)
+       }
+        
+        deleteAction.backgroundColor = UIColor.red
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Modelでタップされた時の追加処理を行う。
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.onTapTableViewCell()
+    }
 }

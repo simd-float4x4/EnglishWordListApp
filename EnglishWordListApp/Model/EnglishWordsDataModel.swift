@@ -9,7 +9,7 @@ class EnglishWordsDataModel {
     }
 }
 
-class EnglishWordsModel: NSObject,UITableViewDataSource, UITableViewDelegate {
+class EnglishWordsModel: NSObject, UITableViewDataSource {
     
     let notificationCenter = NotificationCenter()
     
@@ -70,18 +70,4 @@ class EnglishWordsModel: NSObject,UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    // MARK: UITableViewDelegate
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
-       let deleteAction = UIContextualAction(style: .destructive, title: "Remembered!") { (action, view, completionHandler) in
-         completionHandler(true)
-       }
-        
-        deleteAction.backgroundColor = UIColor.red
-        return UISwipeActionsConfiguration(actions: [deleteAction])
-     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }
