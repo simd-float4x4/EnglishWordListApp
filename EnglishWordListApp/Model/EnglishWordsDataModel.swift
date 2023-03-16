@@ -70,18 +70,15 @@ class EnglishWordsModel: NSObject,UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    // MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-       let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
-           completionHandler(true)
-       }
-
-       let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+       let deleteAction = UIContextualAction(style: .destructive, title: "Remembered!") { (action, view, completionHandler) in
          completionHandler(true)
        }
-
-        editAction.backgroundColor = UIColor.blue
-       return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        
+        deleteAction.backgroundColor = UIColor.red
+        return UISwipeActionsConfiguration(actions: [deleteAction])
      }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
