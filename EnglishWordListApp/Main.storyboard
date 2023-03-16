@@ -90,7 +90,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA"/>
                     <connections>
-                        <segue destination="mCv-ac-T8n" kind="presentation" identifier="ModalSegue" id="ijf-ba-dHA"/>
+                        <segue destination="mCv-ac-T8n" kind="presentation" identifier="ModalSegue" modalTransitionStyle="crossDissolve" id="ijf-ba-dHA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwt-mb-HeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
