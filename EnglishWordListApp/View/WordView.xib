@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordView" customModule="EnglishWordListApp" customModuleProvider="target">
             <connections>
+                <outlet property="progressPercentageLabel" destination="2ks-ZT-ucj" id="rCF-bG-RCI"/>
+                <outlet property="progressWordsSumLabel" destination="In5-ow-4AB" id="S8k-vI-5o7"/>
                 <outlet property="tableView" destination="Jbf-W1-2Gd" id="fOV-5x-PKZ"/>
             </connections>
         </placeholder>

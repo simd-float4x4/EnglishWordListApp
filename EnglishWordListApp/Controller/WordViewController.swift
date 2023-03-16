@@ -18,8 +18,8 @@ class WordViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view = WordView()
-        
+        let wordView = WordView()
+        self.view = wordView
     }
     
     override func viewDidLoad() {
@@ -34,6 +34,20 @@ class WordViewController: UIViewController {
         wordView.tableView.delegate = self
         wordView.tableView.dataSource = self.myModel
         wordView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        fetchCurrentProgessInfo(view: wordView)
+    }
+    
+    private func fetchCurrentProgessInfo(view: WordView) {
+        // 解答問題数
+        let solvedCount = 1
+        let sumQuestion = myModel?.wordList.count ?? 0
+        let sumCurrent = String(solvedCount) + "/" + String(sumQuestion)
+        // 解答問題のパーセンテージ数
+        // TO-DO: エラーで片方取得できなかった場合の例外処理
+        let progressPercentage = solvedCount * 100 / sumQuestion
+        let progress = String(progressPercentage) + "%"
+        view.progressWordsSumLabel.text = sumCurrent
+        view.progressPercentageLabel.text = progress
     }
     
     @objc func registerModel(){

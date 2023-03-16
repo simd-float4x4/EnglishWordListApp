@@ -2,6 +2,8 @@ import UIKit
 
 class WordView: UIView {
    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var progressWordsSumLabel: UILabel!
+    @IBOutlet weak var progressPercentageLabel: UILabel!
    
    override init(frame: CGRect){
        super.init(frame: frame)
