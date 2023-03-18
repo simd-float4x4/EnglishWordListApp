@@ -20,6 +20,13 @@ class WordView: UIView {
        view.frame = self.bounds
        self.addSubview(view)
    }
-
+    
+    @IBAction func changeTranslationVisibility() {
+        let vM = VisibilityManager()
+        let currentVisibility = vM.getCurrentTranslationVisibility()
+        vM.switchTranslationVisibility(currentVisibility: currentVisibility)
+        let wordView = WordView()
+        wordView.tableView.reloadData()
+    }
 }
 

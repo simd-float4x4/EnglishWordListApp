@@ -65,7 +65,9 @@ class EnglishWordsModel: NSObject, UITableViewDataSource {
         let tweetModel = self.wordList[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = tweetModel.word.english
-        content.secondaryText = tweetModel.word.meaning
+        let vM = VisibilityManager()
+        let currentTranslationVisibility = vM.getCurrentTranslationVisibility()
+        content.secondaryText = currentTranslationVisibility == true ? tweetModel.word.meaning : ""
         cell.contentConfiguration = content
         return cell
     }

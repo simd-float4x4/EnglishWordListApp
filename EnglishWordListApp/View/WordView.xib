@@ -75,6 +75,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="日本語訳を隠す"/>
+                            <connections>
+                                <action selector="changeTranslationVisibility" destination="-1" eventType="touchUpInside" id="rHr-fC-O4g"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>

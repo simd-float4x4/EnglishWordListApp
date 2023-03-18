@@ -3,6 +3,8 @@ import Foundation
 
 class WordViewController: UIViewController {
     
+    var isTranslationShowed: Bool = true
+    
     @IBOutlet var inputEnglishWordField: UITextField!
     @IBOutlet var inputEnglishMeaningField: UITextField!
     @IBOutlet var inputEnglishExampleSentenceField: UITextField!
@@ -43,6 +45,7 @@ class WordViewController: UIViewController {
         let sumQuestion = myModel?.wordList.count ?? 0
         let sumCurrent = String(solvedCount) + "/" + String(sumQuestion)
         // 解答問題のパーセンテージ数
+        
         // TO-DO: エラーで片方取得できなかった場合の例外処理
         let progressPercentage = solvedCount * 100 / sumQuestion
         let progress = String(progressPercentage) + "%"
@@ -81,12 +84,12 @@ class WordViewController: UIViewController {
         performSegue(withIdentifier: "ModalSegue", sender: nil)
     }
     
-    @IBAction func onTapToAddWordView() {
-        performSegue(withIdentifier: "toAddWordView", sender: nil)
-    }
-    
     @objc func onTapRemoveView() {
         dismiss(animated: true)
+    }
+    
+    @IBAction func onTapToAddWordView() {
+        performSegue(withIdentifier: "toAddWordView", sender: nil)
     }
 }
 
