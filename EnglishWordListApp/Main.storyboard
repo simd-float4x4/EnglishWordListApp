@@ -47,19 +47,10 @@
         <!--クイズ-->
         <scene sceneID="I8w-sx-RBJ">
             <objects>
-                <viewController id="WMI-3v-DlZ" sceneMemberID="viewController">
+                <viewController id="WMI-3v-DlZ" customClass="QuizViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fAs-s9-L0d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label２" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-58-JIj">
-                                <rect key="frame" x="186" y="438" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="n5o-Tf-YTO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
