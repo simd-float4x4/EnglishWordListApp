@@ -87,6 +87,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA">
+                        <barButtonItem key="leftBarButtonItem" image="trash.fill" catalog="system" id="YqY-0j-CDo"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8uc-Ca-onI">
                             <connections>
                                 <action selector="onTapToAddWordView" destination="xAd-Cz-7vo" id="MYQ-gf-T0R"/>
@@ -179,6 +180,7 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
