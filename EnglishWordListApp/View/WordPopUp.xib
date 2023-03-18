@@ -11,6 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordPopUp" customModule="EnglishWordListApp" customModuleProvider="target">
             <connections>
                 <outlet property="cancelView" destination="RPL-tE-SVE" id="CVo-Z4-z8A"/>
+                <outlet property="wordExampleSentence" destination="ZU2-cC-Mhc" id="AZ0-Bg-DLd"/>
+                <outlet property="wordExampleSentenceTranslation" destination="f4O-29-ESl" id="750-Tb-rwV"/>
+                <outlet property="wordLabel" destination="0UR-jK-OcW" id="AAf-ux-foY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -40,7 +43,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This picture was taken in the evening to accentuate the shows of ancient remains." textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU2-cC-Mhc">
-                                    <rect key="frame" x="8" y="63" width="335" height="100"/>
+                                    <rect key="frame" x="8" y="65" width="335" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <nil key="textColor"/>

@@ -5,6 +5,11 @@ class WordViewController: UIViewController {
     
     var isTranslationShowed: Bool = true
     
+    var word : String = ""
+    var meaning: String = ""
+    var exampleSentence: String = ""
+    var exampleTranslation: String = ""
+    
     @IBOutlet var inputEnglishWordField: UITextField!
     @IBOutlet var inputEnglishMeaningField: UITextField!
     @IBOutlet var inputEnglishExampleSentenceField: UITextField!
@@ -30,6 +35,8 @@ class WordViewController: UIViewController {
         self.myModel = EnglishWordsModel()
         settingTableView()
     }
+    
+    
     
     private func settingTableView () {
         let wordView = self.view as! WordView
@@ -91,6 +98,16 @@ class WordViewController: UIViewController {
     @IBAction func onTapToAddWordView() {
         performSegue(withIdentifier: "toAddWordView", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ModalSegue" {
+            let vc = segue.destination as! WordPopUpModalViewController
+            vc.word = word
+            vc.meaning = meaning
+            vc.exampleSentence = exampleSentence
+            vc.exampleTranslation = exampleTranslation
+        }
+    }
 }
 
 extension WordViewController: UITableViewDelegate {
@@ -107,6 +124,11 @@ extension WordViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let tweetModel = myModel?.wordList[indexPath.row]
+        word = tweetModel?.word.english ?? ""
+        meaning = tweetModel?.word.meaning ?? ""
+        exampleSentence = tweetModel?.word.exampleSentence ?? ""
+        exampleTranslation = tweetModel?.word.exampleSentenceMeaning ?? ""
         self.onTapTableViewCell()
     }
 }

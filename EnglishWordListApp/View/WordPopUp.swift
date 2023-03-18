@@ -2,6 +2,10 @@ import UIKit
 
 class WordPopUp: UIView {
     @IBOutlet weak var cancelView: UIView!
+    
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var wordExampleSentence: UILabel!
+    @IBOutlet weak var wordExampleSentenceTranslation: UILabel!
    
    override init(frame: CGRect){
        super.init(frame: frame)
