@@ -81,6 +81,10 @@ class WordViewController: UIViewController {
         performSegue(withIdentifier: "ModalSegue", sender: nil)
     }
     
+    @IBAction func onTapToAddWordView() {
+        performSegue(withIdentifier: "toAddWordView", sender: nil)
+    }
+    
     @objc func onTapRemoveView() {
         dismiss(animated: true)
     }

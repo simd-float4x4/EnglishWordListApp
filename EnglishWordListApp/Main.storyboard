@@ -69,6 +69,22 @@
             </objects>
             <point key="canvasLocation" x="2115.9420289855075" y="121.875"/>
         </scene>
+        <!--登録-->
+        <scene sceneID="gnJ-ws-3Rf">
+            <objects>
+                <viewController id="bib-GG-fPA" customClass="AddWordViewController" customModule="EnglishWordListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IX0-HN-yLX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iUh-lH-TW4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="登録" id="1ab-Pv-8MI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fv8-v1-Hua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3148" y="-1941"/>
+        </scene>
         <!--単語帳-->
         <scene sceneID="pRE-pZ-8IY">
             <objects>
@@ -79,9 +95,16 @@
                         <viewLayoutGuide key="safeArea" id="0bV-CA-ynK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA"/>
+                    <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8uc-Ca-onI">
+                            <connections>
+                                <action selector="onTapToAddWordView" destination="xAd-Cz-7vo" id="MYQ-gf-T0R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="mCv-ac-T8n" kind="presentation" identifier="ModalSegue" modalTransitionStyle="crossDissolve" id="ijf-ba-dHA"/>
+                        <segue destination="bib-GG-fPA" kind="show" identifier="toAddWordView" id="cp9-88-YxF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwt-mb-HeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,6 +187,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
