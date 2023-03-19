@@ -87,7 +87,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA">
-                        <barButtonItem key="leftBarButtonItem" image="trash.fill" catalog="system" id="YqY-0j-CDo"/>
+                        <barButtonItem key="leftBarButtonItem" image="trash.fill" catalog="system" id="YqY-0j-CDo">
+                            <connections>
+                                <action selector="toggleDeleteModeOnOff" destination="xAd-Cz-7vo" id="1tu-lc-DBa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8uc-Ca-onI">
                             <connections>
                                 <action selector="onTapToAddWordView" destination="xAd-Cz-7vo" id="MYQ-gf-T0R"/>

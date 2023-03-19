@@ -4,24 +4,14 @@ import Foundation
 class WordViewController: UIViewController {
     
     var isTranslationShowed: Bool = true
+    var isDeleteModeActivated: Bool = false
     
     var word : String = ""
     var meaning: String = ""
     var exampleSentence: String = ""
     var exampleTranslation: String = ""
-    
-    @IBOutlet var inputEnglishWordField: UITextField!
-    @IBOutlet var inputEnglishMeaningField: UITextField!
-    @IBOutlet var inputEnglishExampleSentenceField: UITextField!
-    @IBOutlet var inputEnglishExampleSentenceMeaningField: UITextField!
-    @IBOutlet var inputEnglishWordCategoryField: UITextField!
-    @IBOutlet var inputEnglishWordLevelField: UITextField!
 
-    var myModel: EnglishWordsModel? {
-        didSet {
-            registerModel()
-        }
-    }
+    var myModel: EnglishWordsModel?
     
     override func loadView() {
         super.loadView()
@@ -35,8 +25,6 @@ class WordViewController: UIViewController {
         self.myModel = EnglishWordsModel()
         settingTableView()
     }
-    
-    
     
     private func settingTableView () {
         let wordView = self.view as! WordView
@@ -60,33 +48,6 @@ class WordViewController: UIViewController {
         view.progressPercentageLabel.text = progress
     }
     
-    @objc func registerModel(){
-        guard let model = myModel else { return }
-        
-        model.notificationCenter.addObserver(forName: .init(rawValue: "changeTweetList"),
-                                            object: nil,
-                                            queue: nil,
-                                            using: {
-            [unowned self] notification in
-            let wordView = self.view as! WordView
-             
-            wordView.tableView.reloadData()
-         })
-    }
-    
-    @objc func registerWordButton() {
-        var wordCategories: [String] = []
-        wordCategories.append(inputEnglishWordCategoryField.text ?? "")
-        myModel?.addWordList(
-            registeredWord: Word.init(
-                english: inputEnglishWordField.text ?? "",
-                meaning: inputEnglishMeaningField.text ?? "",
-                exampleSentence: inputEnglishExampleSentenceField.text ?? "",
-                exampleSentenceMeaning: inputEnglishExampleSentenceMeaningField.text ?? "",
-                wordCategory: wordCategories,
-                level: 0,
-                isSolved: false))}
-    
     @objc func onTapTableViewCell() {
         performSegue(withIdentifier: "ModalSegue", sender: nil)
     }
@@ -97,6 +58,10 @@ class WordViewController: UIViewController {
     
     @IBAction func onTapToAddWordView() {
         performSegue(withIdentifier: "toAddWordView", sender: nil)
+    }
+    
+    @IBAction func toggleDeleteModeOnOff() {
+        isDeleteModeActivated = isDeleteModeActivated == true ? false : true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,13 +78,27 @@ class WordViewController: UIViewController {
 extension WordViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
-       let deleteAction = UIContextualAction(style: .destructive, title: "Remembered!") { (action, view, completionHandler) in
-         completionHandler(true)
-       }
         
-        deleteAction.backgroundColor = UIColor.red
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        var action = UIContextualAction()
+        
+        switch isDeleteModeActivated {
+        case true :
+            action =  UIContextualAction(style: .destructive, title: "削除") { (action, view, completionHandler) in
+                completionHandler(true)
+              }
+            action.backgroundColor = UIColor.red
+        case false :
+            action =  UIContextualAction(style: .destructive, title: "覚えた") { (action, view, completionHandler) in
+                completionHandler(true)
+              }
+            action.backgroundColor = UIColor.blue
+        default:
+            action =  UIContextualAction(style: .destructive, title: "覚えた") { (action, view, completionHandler) in
+                completionHandler(true)
+              }
+            action.backgroundColor = UIColor.blue
+        }
+        return UISwipeActionsConfiguration(actions: [action])
      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

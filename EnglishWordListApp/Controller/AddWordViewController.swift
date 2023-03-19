@@ -3,6 +3,17 @@ import UIKit
 class AddWordViewController: UIViewController {
 
     let sectionTitleArray = ["単語", "意味", "カテゴリ", "例文", "例文(日本語訳)"]
+    
+    var word : String = ""
+    var meaning: String = ""
+    var exampleSentence: String = ""
+    var exampleTranslation: String = ""
+    
+    var myModel: EnglishWordsModel? {
+        didSet {
+            registerModel()
+        }
+    }
 
     override func loadView() {
         self.view = AddWordView()
@@ -19,19 +30,39 @@ class AddWordViewController: UIViewController {
         view.tableView.dataSource = self
         view.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
-
+    
+    @objc func registerModel(){
+        guard let model = myModel else { return }
+        
+        model.notificationCenter.addObserver(forName: .init(rawValue: "changeTweetList"),
+                                            object: nil,
+                                            queue: nil,
+                                            using: {
+            [unowned self] notification in
+            let wordView = self.view as! WordView
+             
+            wordView.tableView.reloadData()
+         })
+    }
+    
+    @objc func registerWordButton() {
+        myModel?.addWordList(
+            registeredWord: Word.init(
+                english: word,
+                meaning: meaning,
+                exampleSentence: exampleSentence,
+                exampleSentenceMeaning: exampleTranslation,
+                wordCategory: [],
+                level: 0,
+                isSolved: false))}
 }
 
 extension AddWordViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-//        let tweetModel = self.wordList[indexPath.row]
-//        var content = cell.defaultContentConfiguration()
-//        content.text = tweetModel.word.english
-//        let vM = VisibilityManager()
-//        let currentTranslationVisibility = vM.getCurrentTranslationVisibility()
-//        content.secondaryText = currentTranslationVisibility == true ? tweetModel.word.meaning : ""
-//        cell.contentConfiguration = content
+        if indexPath.row % 2 != 0 {
+           
+        }
         return cell
     }
     
@@ -51,7 +82,7 @@ extension AddWordViewController: UITableViewDelegate {
     func tableView(_ table: UITableView,
                        numberOfRowsInSection section: Int) -> Int {
         // TO-DO: Categoryだけ動的に変更できるようにする
-        return 1
+        return 2
     }
     
 }
