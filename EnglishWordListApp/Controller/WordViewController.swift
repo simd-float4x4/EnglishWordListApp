@@ -87,6 +87,8 @@ extension WordViewController: UITableViewDelegate {
                 completionHandler(true)
                 self.myModel?.removeWordList(index: indexPath.row)
                 tableView.reloadData()
+                let wordView = self.view as! WordView
+                self.fetchCurrentProgessInfo(view: wordView)
               }
             action.backgroundColor = UIColor.red
         case false :
