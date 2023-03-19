@@ -54,6 +54,10 @@ class EnglishWordsModel: NSObject, UITableViewDataSource {
         self.wordList.append(EnglishWordsDataModel.init(englishWord: registeredWord))
     }
     
+    func removeWordList(index: Int) {
+        self.wordList.remove(at: index)
+    }
+    
     
     // MARK: UITableViewDatasoruce
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

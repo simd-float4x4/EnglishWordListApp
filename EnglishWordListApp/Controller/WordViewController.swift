@@ -85,6 +85,8 @@ extension WordViewController: UITableViewDelegate {
         case true :
             action =  UIContextualAction(style: .destructive, title: "削除") { (action, view, completionHandler) in
                 completionHandler(true)
+                self.myModel?.removeWordList(index: indexPath.row)
+                tableView.reloadData()
               }
             action.backgroundColor = UIColor.red
         case false :
