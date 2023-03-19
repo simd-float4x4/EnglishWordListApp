@@ -92,11 +92,6 @@ extension WordViewController: UITableViewDelegate {
                 completionHandler(true)
               }
             action.backgroundColor = UIColor.blue
-        default:
-            action =  UIContextualAction(style: .destructive, title: "覚えた") { (action, view, completionHandler) in
-                completionHandler(true)
-              }
-            action.backgroundColor = UIColor.blue
         }
         return UISwipeActionsConfiguration(actions: [action])
      }
