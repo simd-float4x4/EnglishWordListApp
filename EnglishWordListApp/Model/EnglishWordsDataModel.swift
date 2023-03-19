@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class EnglishWordsDataModel {
-    let word: Word
+    var word: Word
     
     init(englishWord: Word){
         word = englishWord
@@ -16,33 +16,39 @@ class EnglishWordsModel: NSObject, UITableViewDataSource {
     private(set) var wordList: [EnglishWordsDataModel] = [
         EnglishWordsDataModel.init(
             englishWord: Word(
-                english: "accentuate",
+                id: 1,
+                word: "accentuate",
                 meaning: "強調する",
                 exampleSentence: "This picture was taken in the evening to accentuate the shows of ancient remains.",
-                exampleSentenceMeaning: "この写真は古代遺物の出現を強調するために夕方撮影された。",
+                exampleTranslation: "この写真は古代遺物の出現を強調するために夕方撮影された。",
                 wordCategory: ["動詞", "頻出単語", "ニガテ"],
                 level: 0,
-                isSolved: false)
+                isSolved: false,
+                isSoftDeleted: false)
         ),
         EnglishWordsDataModel.init(
             englishWord: Word(
-                english: "culminate",
+                id: 2,
+                word: "culminate",
                 meaning: "締め括る／最高潮に達する",
                 exampleSentence: "The ceremony was culminated with the national anthem.",
-                exampleSentenceMeaning: "その式典は国歌斉唱で締めくくられた。",
+                exampleTranslation: "その式典は国歌斉唱で締めくくられた。",
                 wordCategory: ["動詞", "ニガテ"],
                 level: 0,
-                isSolved: false)
+                isSolved: false,
+                isSoftDeleted: false)
         ),
         EnglishWordsDataModel.init(
             englishWord: Word(
-                english: "protectionism",
+                id: 3,
+                word: "protectionism",
                 meaning: "保護主義",
                 exampleSentence: "The country denounced Japan's protectionism to conceal its own lack of economic policy.",
-                exampleSentenceMeaning: "その国は自らの経済的な無策を隠すために日本の保護貿易主義を非難しました。",
+                exampleTranslation: "その国は自らの経済的な無策を隠すために日本の保護貿易主義を非難しました。",
                 wordCategory: ["名詞", "政治・経済"],
                 level: 0,
-                isSolved: false)
+                isSolved: false,
+                isSoftDeleted: false)
         ),
     ]{
         didSet{
@@ -65,15 +71,15 @@ class EnglishWordsModel: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         let tweetModel = self.wordList[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = tweetModel.word.english
-        let vM = VisibilityManager()
-        let currentTranslationVisibility = vM.getCurrentTranslationVisibility()
-        content.secondaryText = currentTranslationVisibility == true ? tweetModel.word.meaning : ""
-        cell.contentConfiguration = content
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        if tweetModel.word.isSoftDeleted == false {
+            var content = cell.defaultContentConfiguration()
+            content.text = tweetModel.word.word
+            content.secondaryText = tweetModel.word.meaning
+            cell.contentConfiguration = content
+            return cell
+        }
         return cell
     }
-
 }

@@ -1,12 +1,13 @@
 import UIKit
 
 struct Word {
-    let english: String // 変えたい
-    let meaning: String
-    let exampleSentence: String
-    let exampleSentenceMeaning: String // translationにしたい
-    let wordCategory: [String]
-    let level: Int
-    let isSolved: Bool
-    // 論理削除フラグを増やしたい
+    let id: Int
+    var word: String
+    var meaning: String
+    var exampleSentence: String
+    var exampleTranslation: String
+    var wordCategory: [String]
+    var level: Int
+    var isSolved: Bool
+    var isSoftDeleted: Bool
 }

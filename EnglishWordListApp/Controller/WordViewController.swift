@@ -6,6 +6,8 @@ class WordViewController: UIViewController {
     var isTranslationShowed: Bool = true
     var isDeleteModeActivated: Bool = false
     
+    var solvedCount = 0
+    
     var word : String = ""
     var meaning: String = ""
     var exampleSentence: String = ""
@@ -30,14 +32,14 @@ class WordViewController: UIViewController {
         let wordView = self.view as! WordView
         wordView.tableView.delegate = self
         wordView.tableView.dataSource = self.myModel
+        wordView.tableView.tableFooterView = UIView()
         wordView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         fetchCurrentProgessInfo(view: wordView)
     }
     
     private func fetchCurrentProgessInfo(view: WordView) {
         // 解答問題数
-        let solvedCount = 1
-        let sumQuestion = myModel?.wordList.count ?? 0
+        let sumQuestion = (myModel?.wordList.count ?? 0) + solvedCount
         let sumCurrent = String(solvedCount) + "/" + String(sumQuestion)
         // 解答問題のパーセンテージ数
         
@@ -46,6 +48,12 @@ class WordViewController: UIViewController {
         let progress = String(progressPercentage) + "%"
         view.progressWordsSumLabel.text = sumCurrent
         view.progressPercentageLabel.text = progress
+    }
+    
+    func reloadData() {
+        let wordView = self.view as! WordView
+        wordView.tableView.reloadData()
+        fetchCurrentProgessInfo(view: wordView)
     }
     
     @objc func onTapTableViewCell() {
@@ -86,14 +94,16 @@ extension WordViewController: UITableViewDelegate {
             action =  UIContextualAction(style: .destructive, title: "削除") { (action, view, completionHandler) in
                 completionHandler(true)
                 self.myModel?.removeWordList(index: indexPath.row)
-                tableView.reloadData()
-                let wordView = self.view as! WordView
-                self.fetchCurrentProgessInfo(view: wordView)
+                self.reloadData()
               }
             action.backgroundColor = UIColor.red
         case false :
             action =  UIContextualAction(style: .destructive, title: "覚えた") { (action, view, completionHandler) in
                 completionHandler(true)
+                self.myModel?.wordList[indexPath.row].word.isSoftDeleted = true
+                self.myModel?.removeWordList(index: indexPath.row)
+                self.solvedCount += 1
+                self.reloadData()
               }
             action.backgroundColor = UIColor.blue
         }
@@ -103,10 +113,10 @@ extension WordViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let tweetModel = myModel?.wordList[indexPath.row]
-        word = tweetModel?.word.english ?? ""
+        word = tweetModel?.word.word ?? ""
         meaning = tweetModel?.word.meaning ?? ""
         exampleSentence = tweetModel?.word.exampleSentence ?? ""
-        exampleTranslation = tweetModel?.word.exampleSentenceMeaning ?? ""
+        exampleTranslation = tweetModel?.word.exampleTranslation ?? ""
         self.onTapTableViewCell()
     }
 }

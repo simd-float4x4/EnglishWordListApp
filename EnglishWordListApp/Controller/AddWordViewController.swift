@@ -48,13 +48,15 @@ class AddWordViewController: UIViewController {
     @objc func registerWordButton() {
         myModel?.addWordList(
             registeredWord: Word.init(
-                english: word,
+                id: 99999,
+                word: word,
                 meaning: meaning,
                 exampleSentence: exampleSentence,
-                exampleSentenceMeaning: exampleTranslation,
+                exampleTranslation: exampleTranslation,
                 wordCategory: [],
                 level: 0,
-                isSolved: false))}
+                isSolved: false,
+                isSoftDeleted: false))}
 }
 
 extension AddWordViewController: UITableViewDataSource {
