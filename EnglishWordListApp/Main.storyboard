@@ -89,7 +89,7 @@
                     <navigationItem key="navigationItem" title="単語帳" id="J4U-Ew-DQA">
                         <barButtonItem key="leftBarButtonItem" image="trash.fill" catalog="system" id="YqY-0j-CDo">
                             <connections>
-                                <action selector="toggleDeleteModeOnOff" destination="xAd-Cz-7vo" id="1tu-lc-DBa"/>
+                                <action selector="toggleDeleteModeOnOff" destination="xAd-Cz-7vo" id="Tgx-SA-sMr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8uc-Ca-onI">
@@ -99,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="wordViewNavigationBarUpperLeftItem" destination="J4U-Ew-DQA" id="l1p-Th-2WU"/>
                         <segue destination="mCv-ac-T8n" kind="presentation" identifier="ModalSegue" modalTransitionStyle="crossDissolve" id="ijf-ba-dHA"/>
                         <segue destination="bib-GG-fPA" kind="show" identifier="toAddWordView" id="cp9-88-YxF"/>
                     </connections>

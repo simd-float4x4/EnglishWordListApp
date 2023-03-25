@@ -4,7 +4,7 @@ import Foundation
 class WordViewController: UIViewController {
     
     var isTranslationShowed: Bool = true
-    var isDeleteModeActivated: Bool = false
+    var isDeleteModeActivated: Bool = true
     
     var solvedCount = 0
     
@@ -12,7 +12,9 @@ class WordViewController: UIViewController {
     var meaning: String = ""
     var exampleSentence: String = ""
     var exampleTranslation: String = ""
-
+    
+    @IBOutlet weak var wordViewNavigationBarUpperLeftItem: UINavigationItem!
+    
     var myModel: EnglishWordsModel?
     
     override func loadView() {
@@ -80,7 +82,16 @@ class WordViewController: UIViewController {
     }
     
     @IBAction func toggleDeleteModeOnOff() {
+        let imageSystemName = isDeleteModeActivated == true ? "brain.head.profile" : "trash.fill"
+        print("toggleMode: ",  isDeleteModeActivated)
+        // TO-DO: UIBarButtonItemを用いない方法を探すか、toggleDeleteModeOnOffが一度しか呼ばれない理由を探る
+        let item = UIBarButtonItem(image: UIImage(systemName: imageSystemName)!, style: .plain, target: self, action: #selector(deleteModeActivated))
+        wordViewNavigationBarUpperLeftItem.leftBarButtonItem = item
+    }
+    
+    @objc func deleteModeActivated(){
         isDeleteModeActivated = isDeleteModeActivated == true ? false : true
+        print("deleteMode: ", isDeleteModeActivated)
     }
     
     ///
@@ -106,7 +117,7 @@ extension WordViewController: UITableViewDelegate {
         
         switch isDeleteModeActivated {
         case true :
-            // 削除モードON
+            // 削除モードONの時
             action =  UIContextualAction(style: .destructive, title: "削除") { (action, view, completionHandler) in
                 completionHandler(true)
                 self.myModel?.removeWordList(index: indexPath.row)
@@ -114,7 +125,7 @@ extension WordViewController: UITableViewDelegate {
               }
             action.backgroundColor = UIColor.red
         case false :
-            // 暗記モードON
+            // 暗記モードONの時
             action =  UIContextualAction(style: .destructive, title: "覚えた") { (action, view, completionHandler) in
                 completionHandler(true)
                 self.myModel?.wordList[indexPath.row].word.isSoftDeleted = true
