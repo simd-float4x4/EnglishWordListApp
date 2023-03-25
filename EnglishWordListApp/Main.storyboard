@@ -110,7 +110,6 @@
         <!--単語帳-->
         <scene sceneID="QBU-YE-LTK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LZL-FE-2E0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ipb-Li-Tgf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="単語帳" id="sd9-Iv-qQZ"/>
                     <toolbarItems/>
@@ -124,6 +123,7 @@
                         <segue destination="xAd-Cz-7vo" kind="relationship" relationship="rootViewController" id="TAf-WG-Lch"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZL-FE-2E0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1074" y="-1281"/>
         </scene>
