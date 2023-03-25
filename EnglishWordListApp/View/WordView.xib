@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordView" customModule="EnglishWordListApp" customModuleProvider="target">
             <connections>
+                <outlet property="progressBarWidget" destination="tJr-tP-KJh" id="ahp-DO-hmT"/>
                 <outlet property="progressPercentageLabel" destination="2ks-ZT-ucj" id="rCF-bG-RCI"/>
                 <outlet property="progressWordsSumLabel" destination="In5-ow-4AB" id="S8k-vI-5o7"/>
                 <outlet property="tableView" destination="Jbf-W1-2Gd" id="fOV-5x-PKZ"/>
@@ -49,7 +50,7 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tJr-tP-KJh">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJr-tP-KJh">
                                     <rect key="frame" x="8" y="46" width="342" height="4"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </progressView>

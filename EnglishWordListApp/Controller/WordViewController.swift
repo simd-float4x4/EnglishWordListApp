@@ -41,11 +41,13 @@ class WordViewController: UIViewController {
         // 解答問題数
         let sumQuestion = (myModel?.wordList.count ?? 0) + solvedCount
         let sumCurrent = String(solvedCount) + "/" + String(sumQuestion)
-        // 解答問題のパーセンテージ数
         
         // TO-DO: エラーで片方取得できなかった場合の例外処理
         let progressPercentage = solvedCount * 100 / sumQuestion
         let progress = String(progressPercentage) + "%"
+        // 解答問題のパーセンテージ数
+        view.progressBarWidget.setProgress(Float(progressPercentage)/100, animated: true)
+        view.progressBarWidget.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         view.progressWordsSumLabel.text = sumCurrent
         view.progressPercentageLabel.text = progress
     }
