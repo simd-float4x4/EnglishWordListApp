@@ -84,12 +84,21 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t26-Mp-uh0">
-                            <rect key="frame" x="8" y="12" width="358" height="31"/>
+                            <rect key="frame" x="233" y="12" width="133" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="日本語訳を隠す"/>
                             <connections>
                                 <action selector="changeTranslationVisibility" destination="-1" eventType="touchUpInside" id="rHr-fC-O4g"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-yk-vUj">
+                            <rect key="frame" x="8" y="12" width="133" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="ソート"/>
+                            <connections>
+                                <action selector="changeTranslationVisibility" destination="-1" eventType="touchUpInside" id="P9D-dd-QLv"/>
                             </connections>
                         </button>
                     </subviews>
