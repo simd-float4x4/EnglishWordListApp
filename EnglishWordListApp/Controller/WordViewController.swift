@@ -4,7 +4,7 @@ import Foundation
 class WordViewController: UIViewController {
     
     var isTranslationShowed: Bool = true
-    var isDeleteModeActivated: Bool = true
+    var isDeleteModeActivated: Bool = false
     
     var solvedCount = 0
     
@@ -13,9 +13,9 @@ class WordViewController: UIViewController {
     var exampleSentence: String = ""
     var exampleTranslation: String = ""
     
-    @IBOutlet weak var wordViewNavigationBarUpperLeftItem: UINavigationItem!
-    
     var myModel: EnglishWordsModel?
+    
+    @IBOutlet weak var myBarButtonItem: UIBarButtonItem!
     
     override func loadView() {
         super.loadView()
@@ -81,18 +81,13 @@ class WordViewController: UIViewController {
         performSegue(withIdentifier: "toAddWordView", sender: nil)
     }
     
-    @IBAction func toggleDeleteModeOnOff() {
+    @IBAction func toggleDeleteModeOnOff(_ sender: UIBarButtonItem) {
+        isDeleteModeActivated = isDeleteModeActivated == true ? false : true
         let imageSystemName = isDeleteModeActivated == true ? "brain.head.profile" : "trash.fill"
-        print("toggleMode: ",  isDeleteModeActivated)
-        // TO-DO: UIBarButtonItemを用いない方法を探すか、toggleDeleteModeOnOffが一度しか呼ばれない理由を探る
-        let item = UIBarButtonItem(image: UIImage(systemName: imageSystemName)!, style: .plain, target: self, action: #selector(deleteModeActivated))
-        wordViewNavigationBarUpperLeftItem.leftBarButtonItem = item
+        let newImage = UIImage(systemName: imageSystemName)
+        myBarButtonItem.image = newImage
     }
     
-    @objc func deleteModeActivated(){
-        isDeleteModeActivated = isDeleteModeActivated == true ? false : true
-        print("deleteMode: ", isDeleteModeActivated)
-    }
     
     ///
     /// 単語タップ時に単語表示画面に値を渡すためのメソッド
